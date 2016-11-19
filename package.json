@@ -1,0 +1,24 @@
+{
+  "name": "node_exercise",
+  "version": "1.0.0",
+  "description": "Node.js exercise",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DalRiDiego/SE2_16_173806_L4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DalRiDiego/SE2_16_173806_L4/issues"
+  },
+  "homepage": "https://github.com/DalRiDiego/SE2_16_173806_L4#readme"
+}
