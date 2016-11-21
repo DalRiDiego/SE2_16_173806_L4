@@ -108,7 +108,7 @@ app.post('/',function (request,response){//POST utilizzato per aggiungere o modi
 			if(employees.length == 0){//se e' il primo ad essere aggiunto
 				template.id=1;
 			}else{
-				template.id=employees[employees.length-1].id+1;
+				template.id=1+employees[employees.length-1].id;
 			}
 		}
 		employees.push(template);		
