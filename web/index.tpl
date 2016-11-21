@@ -10,7 +10,7 @@
 	<h1> Employee Manager System</h1>
 	<form id="search" method="GET" action="/">
 		<label>id:</label>
-		<input type="number" id="id" name="id" placeholder="Employee id" />
+		<input type="number" id="idsearch" name="id" placeholder="Employee id" />
 		<input type="hidden" id="d" value="false" />
 		<input type="submit" id="find" value="find employee"/>
 		<button id="delete" onclick="del()" >delete employee</button> 
