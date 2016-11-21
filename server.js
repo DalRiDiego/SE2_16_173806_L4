@@ -1,8 +1,6 @@
 var http = require('http');
 var express = require('express');
 var util = require('util');
-var bind = require('bind');
-var url = require('url');
 var bodyParser = require('body-parser');
 
 
