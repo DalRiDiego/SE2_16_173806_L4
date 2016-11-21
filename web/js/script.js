@@ -13,6 +13,5 @@ function del(){
 	var h = document.getElementById("d");
 	h.name = "del";
 	h.value = "true";
-	alert("asd");
 	document.getElementById("search").submit();
 }
