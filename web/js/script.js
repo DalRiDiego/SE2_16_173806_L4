@@ -28,6 +28,10 @@ function del(){
 	document.getElementById("search").submit();
 }
 
+/**
+ * Funzione che controlla i dati prima di essere inviati al server.
+ * Se i campi, a parte l'id, non sono stati inseriti, non viene inviato il form
+*/
 function send(){
 	var elem=["name","surname","level","salary"];
 	
@@ -38,8 +42,6 @@ function send(){
 		test = test && (o.value != "");
 	}
 
-	test = test && !isNaN(parseInt(document.getElementById("level").value));
-	test = test && !isNaN(parseInt(document.getElementById("salary").value));
 	if(test){
 		document.getElementById("form").submit();
 	}
