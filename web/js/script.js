@@ -3,6 +3,11 @@ function f(){
 	if(o.className == "premuto") {
 		o.className = "";
 		document.getElementById("form").className = "nascondi";
+		document.getElementById("id").value="";
+		document.getElementById("name").value="";
+		document.getElementById("surname").value="";
+		document.getElementById("level").value="";
+		document.getElementById("salary").value="";
 	}else{
 		o.className = "premuto";
 		document.getElementById("form").className = "";
