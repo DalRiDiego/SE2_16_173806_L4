@@ -10,6 +10,8 @@ var bodyParser = require('body-parser');
 var app = express();
 app.set('port',(process.env.PORT || 8080)); //ascolta la porta 8080
 app.use(bodyParser.urlencoded({ extended: false }));
+
+
 var employees = [];
 
 app.use(express.static(__dirname + '/web')); // serve per il collegamento di js e css
@@ -26,6 +28,7 @@ app.get("/",function (request,response){
 	var url_parts = url.parse(request.url, true);
     var getVar = url_parts.query;
 	var id=getVar.id;
+	var del=getVar.del;
 
 	if (id !== null) {
 		// cerco l'id
@@ -35,8 +38,14 @@ app.get("/",function (request,response){
 				break;
 			}
 		}
-		if(i<employees.length){
-			template=employees[i];
+		if(del=="true"){
+			delete employees[i];
+			employees.sort();
+			employees.pop();
+		}else{
+			if(i<employees.length){
+				template=employees[i];
+			}
 		}
 	}
 
