@@ -24,7 +24,7 @@
 		<label>Surname:</label> <input type="text" id="surname" name="surname" placeholder="Employee surname" value="(:surname:)"/> <br/>
 		<label>Level:</label> <input type="number" id="level" name="level" placeholder="Employee level" value="(:level:)"/> <br/>
 		<label>Salary:</label> <input type="number" id="salary" name="salary" placeholder="Employee salary" value="(:salary:)"/> <br/>
-		<input type="submit" id="invia" value="Modifica dati"/>
+		<input type="button" id="invia" onclick="send()" value=" Modifica dati"/>
 	</form>
 	<script>
 		(:fun:)

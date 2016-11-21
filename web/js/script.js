@@ -27,3 +27,20 @@ function del(){
 	h.value = "true";
 	document.getElementById("search").submit();
 }
+
+function send(){
+	var elem=["name","surname","level","salary"];
+	
+	var test = true;
+	var i=0;
+	for (i=0 ; i<elem.length && test; i++){
+		var o = document.getElementById(elem[i]);
+		test = test && (o.value != "");
+	}
+
+	test = test && !isNaN(parseInt(document.getElementById("level").value));
+	test = test && !isNaN(parseInt(document.getElementById("salary").value));
+	if(test){
+		document.getElementById("form").submit();
+	}
+}
