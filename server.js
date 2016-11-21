@@ -1,7 +1,8 @@
 var http = require('http');
 var express = require('express');
-var util = require('util');
+var bind = require('bind');
 var bodyParser = require('body-parser');
+var url = require('url');
 
 
 
@@ -20,7 +21,8 @@ app.get("/",function (request,response){//GET utilizzato per ottenere un lavorat
 		name:'',
 		surname:'',
 		level:'',
-		salary:''
+		salary:'',
+		fun:''
 	};
 	
 	var url_parts = url.parse(request.url, true);
@@ -28,7 +30,7 @@ app.get("/",function (request,response){//GET utilizzato per ottenere un lavorat
 	var id=getVar.id;
 	var del=getVar.del;
 
-	if (id !== null) { //se un id e' stato passato
+	if (id != undefined && id!="") { //se un id e' stato passato
 		// cerco l'id
 		var i=0;
 		for (i=0 ; i<employees.length ; i++){
@@ -47,6 +49,7 @@ app.get("/",function (request,response){//GET utilizzato per ottenere un lavorat
 				template=employees[i];
 			}
 		}
+		template.fun='f()';
 	}
 
 	bind.toFile('web/index.tpl',template,function (data){
@@ -106,10 +109,12 @@ app.post('/',function (request,response){//POST utilizzato per aggiungere o modi
 			if(employees.length == 0){//se e' il primo ad essere aggiunto
 				template.id=1;
 			}else{
-				template.id=1+employees[employees.length-1].id;
+				template.id=1+parseInt(employees[employees.length-1].id);
 			}
 		}
-		employees.push(template);		
+		employees.push(template);	
+		employee.sort();
+			
 	}
 	template.fun='f()';//aggiungo il fatto di postrare il form all'inizio
 	bind.toFile('web/index.tpl',template,function (data){
