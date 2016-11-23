@@ -113,7 +113,7 @@ app.post('/',function (request,response){//POST utilizzato per aggiungere o modi
 			}
 		}
 		employees.push(template);	
-		employee.sort();
+		employees.sort();
 			
 	}
 	template.fun='f()';//aggiungo il fatto di postrare il form all'inizio
