@@ -38,8 +38,8 @@ function send(){
 		test = test && (o.value != "");
 	}
 
-	test = test && !isNaN(parseInt(document.getElementById("level").value));
-	test = test && !isNaN(parseInt(document.getElementById("salary").value));
+	test = test && !isNaN(document.getElementById("level").value);
+	test = test && !isNaN(document.getElementById("salary").value);
 	if(test){
 		document.getElementById("form").submit();
 	}
